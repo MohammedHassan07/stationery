@@ -10,6 +10,7 @@ const DisplayBill = () => {
     const [isBill, setIsBill] = useState(false)
     const [date, setDate] = useState('')
     const invoiceRefs = useRef({})
+    const [paymentMethod, setPaymentMethod] = useState('')
 
     const fetchData = async (url) => {
 
@@ -109,6 +110,8 @@ const DisplayBill = () => {
                                     invoiceRefs.current[data._id] = React.createRef();
                                 }
 
+                                // setPaymentMethod(data.paymentMethod)
+
                                 return (
                                     <div
                                         key={data._id}
@@ -174,7 +177,7 @@ const DisplayBill = () => {
                                                         (data.totalAmount * 0.05) + (data.totalAmount * 0.05)
                                                     )
                                                 } */}
-                                                 Grand Total: ₹{
+                                                Grand Total: ₹{
                                                     (data.totalAmount - (2)) + (
                                                         (data.totalAmount * 0.05) + (data.totalAmount * 0.05)
                                                     )
@@ -184,7 +187,7 @@ const DisplayBill = () => {
 
                                         {/* Footer */}
                                         <div className="flex items-center justify-between mt-4">
-                                            <p className="text-sm">Payment Mode: UPI</p>
+                                            <p className="text-sm">Payment Mode: {paymentMethod}</p>
                                             <button
                                                 onClick={() => { generatePDF(data._id, invoiceRefs.current[data._id]) }}
                                                 className="py-2 px-4 bg-green-600 text-white font-semibold rounded-lg"
