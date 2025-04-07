@@ -15,9 +15,9 @@ const DisplayBill = () => {
     const fetchData = async (url) => {
 
         const { status, data } = await getRequest(url)
-        console.log(status, data)
+        console.log(status, data.billingData.length)
 
-        if (status !== 200 || !data || data.length === 0) {
+        if (status !== 200 || !data || data.billingData.length === 0) {
 
             setIsBill(false)
             setBillingData([]);
@@ -101,6 +101,8 @@ const DisplayBill = () => {
 
                 {/* Data will be displayed here */}
                 <div className='min-h-screen, overflow-y-auto'>
+
+                    {/* {console.log(isBill)} */}
                     {isBill ? (
                         <div className="p-4 space-y-6" ref={invoiceRefs}>
 
@@ -167,21 +169,11 @@ const DisplayBill = () => {
 
                                         {/* Summary */}
                                         <div className="text-right space-y-1">
-                                            <p className="text-sm">Subtotal: ₹{data.totalAmount}</p>
+                                            <p className="text-sm">Subtotal: ₹{data.subTotal}</p>
                                             <p className="text-sm">Discount: ₹{data.discount}</p>
-                                            <p className="text-sm">CGST @ 5%: ₹{(data.totalAmount * 0.05).toFixed(2)}</p>
-                                            <p className="text-sm">SGST @ 5%: ₹{(data.totalAmount * 0.05).toFixed(2)}</p>
+                                            <p className="text-sm">CGST @ 5%: ₹{data.SGSTandCGST}</p>
                                             <p className="font-bold text-yellow-400 text-lg">
-                                                {/* Grand Total: ₹{
-                                                    (data.totalAmount - (data.discount)) + (
-                                                        (data.totalAmount * 0.05) + (data.totalAmount * 0.05)
-                                                    )
-                                                } */}
-                                                Grand Total: ₹{
-                                                    (data.totalAmount - (2)) + (
-                                                        (data.totalAmount * 0.05) + (data.totalAmount * 0.05)
-                                                    )
-                                                }
+                                                Grand Total: ₹{data.grandTotal}
                                             </p>
                                         </div>
 
