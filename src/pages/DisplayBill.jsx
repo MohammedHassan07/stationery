@@ -10,12 +10,12 @@ const DisplayBill = () => {
     const [isBill, setIsBill] = useState(false)
     const [date, setDate] = useState('')
     const invoiceRefs = useRef({})
-    const [paymentMethod, setPaymentMethod] = useState('')
 
     const fetchData = async (url) => {
 
         const { status, data } = await getRequest(url)
-        console.log(status, data.billingData.length)
+
+        // console.log(status, data.billingData.length)
 
         if (status !== 200 || !data || data.billingData.length === 0) {
 
@@ -99,7 +99,6 @@ const DisplayBill = () => {
                     </div>
                 </form>
 
-                {/* Data will be displayed here */}
                 <div className='min-h-screen, overflow-y-auto'>
 
                   {isBill ? (
@@ -111,6 +110,8 @@ const DisplayBill = () => {
                                     invoiceRefs.current[data._id] = React.createRef();
                                 }
 
+
+                                // TODO: invoice number needs to be handled
                                 return (
                                     <div
                                         key={data._id}
@@ -168,7 +169,7 @@ const DisplayBill = () => {
                                         <div className="text-right space-y-1">
                                             <p className="text-sm">Subtotal: ₹{data.subTotal}</p>
                                             <p className="text-sm">Discount: ₹{data.discount}</p>
-                                            <p className="text-sm">CGST @ 5%: ₹{data.SGSTandCGST}</p>
+                                            <p className="text-sm">CGST @  {data.SGSTandCGST}%: ₹{data.CGSTAmount}</p>
                                             <p className="font-bold text-yellow-400 text-lg">
                                                 Grand Total: ₹{data.grandTotal}
                                             </p>

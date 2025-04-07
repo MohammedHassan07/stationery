@@ -12,7 +12,7 @@ const Billing = () => {
   const [brands, setBrands] = useState([])
   const [discount, setDiscount] = useState('')
   const [paymentMethod, setPaymentMethod] = useState('Cash')
-  const [SGSTandCGST, setSGSTAndCGST] = useState('0.05')
+  const [SGSTandCGST, setSGSTAndCGST] = useState('')
 
 
   useEffect(() => {
@@ -72,10 +72,13 @@ const Billing = () => {
     e.preventDefault();
 
     const subTotal = billingProducts.reduce((sum, p) => sum + p.totalPrice, 0)
+
     const discountAmount = subTotal - Number(discount)
-    const grandTotal = (subTotal - (discount)) + (
-      (subTotal * SGSTandCGST) + (subTotal * SGSTandCGST)
-    )
+
+    const CGSTAmount = (subTotal * SGSTandCGST) / 100
+
+    const grandTotal = discountAmount + CGSTAmount
+
     const bill = {
 
       customerName,
@@ -84,13 +87,15 @@ const Billing = () => {
       discountAmount,
       discount,
       SGSTandCGST,
+      CGSTAmount,
       paymentMethod,
       subTotal,
       grandTotal,
       totalItem: billingProducts.length,
       dateAndTime: new Date().toLocaleString()
     }
-    // console.log(bill)
+    console.log( 'discountAmount', discountAmount, 'discount', discount, 'SGST', SGSTandCGST, 'payment', paymentMethod, 'subtotal', subTotal, 'grandTotal',
+      grandTotal, CGSTAmount)
 
     const { status, data } = await postRequest('/api/billing/add-bill', bill)
 
@@ -145,14 +150,20 @@ const Billing = () => {
               required
             />
 
-            <input
+            <select className="w-full max-w-md p-2 border rounded" value={SGSTandCGST} onChange={(e) => { setSGSTAndCGST(e.target.value) }}>
+              <option value="">Select CGST</option>
+              <option value="5">5%</option>
+              <option value="12">12%</option>
+            </select>
+
+            {/* <input
               type="sgst and cgst"
               placeholder="SGST and CGST"
               // value={SGSTandCGST}
               onChange={(e) => setSGSTAndCGST(e.target.value)}
               className="w-full p-3 rounded-lg text-gray-100 border-2 border-gray-500 bg-gray-700"
               required
-            />
+            /> */}
 
             <select className="w-full max-w-md p-2 border rounded" value={paymentMethod} onChange={(e) => { setPaymentMethod(e.target.value) }}>
               <option value="">Select Payment Method</option>
