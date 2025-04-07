@@ -102,8 +102,7 @@ const DisplayBill = () => {
                 {/* Data will be displayed here */}
                 <div className='min-h-screen, overflow-y-auto'>
 
-                    {/* {console.log(isBill)} */}
-                    {isBill ? (
+                  {isBill ? (
                         <div className="p-4 space-y-6" ref={invoiceRefs}>
 
                             {billingData.billingData.map((data) => {
@@ -111,8 +110,6 @@ const DisplayBill = () => {
                                 if (!invoiceRefs.current[data._id]) {
                                     invoiceRefs.current[data._id] = React.createRef();
                                 }
-
-                                // setPaymentMethod(data.paymentMethod)
 
                                 return (
                                     <div
@@ -179,7 +176,7 @@ const DisplayBill = () => {
 
                                         {/* Footer */}
                                         <div className="flex items-center justify-between mt-4">
-                                            <p className="text-sm">Payment Mode: {paymentMethod}</p>
+                                            <p className="text-sm">Payment Mode: {data.paymentMethod}</p>
                                             <button
                                                 onClick={() => { generatePDF(data._id, invoiceRefs.current[data._id]) }}
                                                 className="py-2 px-4 bg-green-600 text-white font-semibold rounded-lg"

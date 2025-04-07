@@ -154,7 +154,7 @@ const Billing = () => {
               required
             />
 
-            <select className="w-full max-w-md p-2 border rounded" value='' onChange={(e) => { setPaymentMethod(e.target.value) }}>
+            <select className="w-full max-w-md p-2 border rounded" value={paymentMethod} onChange={(e) => { setPaymentMethod(e.target.value) }}>
               <option value="">Select Payment Method</option>
               <option value="Cash">Cash</option>
               <option value="UPI">UPI</option>
