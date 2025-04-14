@@ -6,10 +6,10 @@ A web-based application designed for stationary shop owners to manage their prod
 ## 📸 Screenshots
 
 ### 📊 Demo
-![Demo](./public/Screenshots/nobel%20.webm)
+![Demo](./public/Screenshots/nobel.webm)
 
 ### 🏠 Inventory
-![Inventory](./public/Screenshots/inventory.png.png)
+![Inventory](./public/Screenshots/inventory.png)
 
 ### ➕ Add Products
 ![Add Product](./public/Screenshots/addProd.png)
