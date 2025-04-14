@@ -2,23 +2,21 @@
 
 A web-based application designed for stationary shop owners to manage their products, generate bills, print invoices, and track stock. Built with the **MERN** stack to provide a smooth and efficient experience for small business owners.
 
----
 
 ## 📸 Screenshots
 
-### 🏠 Home / Dashboard
-![Dashboard](./assets/dashboard.png)
+### 📊 Demo
+![Demo](./public/Screenshots/nobel%20.webm)
+
+### 🏠 Inventory
+![Dashboard](./public/Screenshots/inventory.png.png)
 
 ### ➕ Add Products
-![Add Product](./assets/add-product.png)
+![Add Product](./public/Screenshots/addProd.png)
 
 ### 🧾 Create Bill
-![Create Bill](./assets/create-bill.png)
+![Create Bill](./public/Screenshots/billing.png)
 
-### 📊 Stock Management
-![Stock](./assets/stock.png)
-
----
 
 ## 🚀 Features
 
@@ -28,7 +26,6 @@ A web-based application designed for stationary shop owners to manage their prod
 - 📊 View & Manage Stock
 - 📝 Easy-to-use UI for day-to-day operations
 
----
 
 ## 🧑‍💻 Tech Stack
 
@@ -41,14 +38,12 @@ A web-based application designed for stationary shop owners to manage their prod
 [![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)](https://expressjs.com/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
 
----
 
 ## 📂 Repositories
 
 - **Frontend**: [stationary-frontend](https://github.com/NumairFaizi/stationery)
 - **Backend**: [stationary-backend](https://github.com/NumairFaizi/stat-backend)
 
----
 
 ## 👨‍💻 Contributors
 - **Backend Developer:** [Mohammed Hassan](https://www.linkedin.com/in/mohammed-hassan-343b00215)
