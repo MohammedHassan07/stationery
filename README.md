@@ -1,6 +1,7 @@
 # 🛍️ Stationary Management App (MERN Stack)
 
 A web-based application designed for stationary shop owners to manage their products, generate bills, print invoices, and track stock. Built with the **MERN** stack to provide a smooth and efficient experience for small business owners.
+ This project functions as a simple Content Management System (CMS) for stationary stores, helping shopkeepers manage their products, sales, and stock effortlessly.
 
 
 ## 📸 Screenshots
