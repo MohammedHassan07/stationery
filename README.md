@@ -4,6 +4,22 @@ A web-based application designed for stationary shop owners to manage their prod
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Home / Dashboard
+![Dashboard](./assets/dashboard.png)
+
+### ➕ Add Products
+![Add Product](./assets/add-product.png)
+
+### 🧾 Create Bill
+![Create Bill](./assets/create-bill.png)
+
+### 📊 Stock Management
+![Stock](./assets/stock.png)
+
+---
+
 ## 🚀 Features
 
 - 📦 Add New Products
@@ -33,3 +49,7 @@ A web-based application designed for stationary shop owners to manage their prod
 - **Backend**: [stationary-backend](https://github.com/NumairFaizi/stat-backend)
 
 ---
+
+## 👨‍💻 Contributors
+- **Backend Developer:** [Mohammed Hassan](https://www.linkedin.com/in/mohammed-hassan-343b00215)
+- **Frontend Developer:** [Faizi Numair](https://www.linkedin.com/in/faizi-numair-mohammed-hesham-shahid-akhtar-42668b1b9)
