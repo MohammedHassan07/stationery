@@ -1,8 +1,8 @@
 # Stage 1: Build the React app
-FROM node:18-alpine AS builder
+FROM node:current-alpine3.22 AS builder
 
 # Set working directory
-WORKDIR /app
+WORKDIR /src
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
@@ -20,7 +20,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy the built files from previous stage
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=builder /src/build /usr/share/nginx/html
 
 # Copy custom Nginx configuration if needed (optional)
 # COPY nginx.conf /etc/nginx/nginx.conf
