@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  stationary-app:
+    image: stationary:latest   
+    container_name: stationary
+    ports:
+      - "80:80"
+    restart: always
